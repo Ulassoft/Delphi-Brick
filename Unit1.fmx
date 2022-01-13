@@ -1,0 +1,120 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Viewport3D1: TViewport3D
+    Align = Client
+    Color = claSkyblue
+    Size.Width = 640.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    object Light1: TLight
+      Color = claWhite
+      LightType = Directional
+      SpotCutOff = 180.000000000000000000
+      RotationAngle.Y = 336.222717285156300000
+      Width = 1.000000000000000000
+      Height = 1.000000000000000000
+      Depth = 1.000000000000000000
+      Quanternion = '(0,-0.20600987970829,0,0.978549718856812)'
+      object FloatAnimation1: TFloatAnimation
+        Enabled = True
+        Duration = 0.200000002980232200
+        Loop = True
+        OnProcess = FloatAnimation1Process
+        OnFinish = FloatAnimation1Finish
+        PropertyName = 'RotationCenter.Y'
+        StartValue = 0.000000000000000000
+        StopValue = 0.000000000000000000
+      end
+    end
+    object Dummy1: TDummy
+      Locked = True
+      Width = 20.000000000000000000
+      Height = 14.000000000000000000
+      Depth = 1.000000000000000000
+      OnRender = Dummy1Render
+      object StrokeCube1: TStrokeCube
+        Color = claWhite
+        Width = 20.000000000000000000
+        Height = 14.000000000000000000
+        Depth = 0.001000000047497451
+      end
+      object RoundCube1: TRoundCube
+        Tag = 1
+        Position.X = -1.242926478385925000
+        Position.Y = 4.019358158111572000
+        Width = 4.000000000000000000
+        Height = 0.500000000000000000
+        Depth = 1.000000000000000000
+        OnMouseDown = RoundCube1MouseDown
+        OnMouseMove = RoundCube1MouseMove
+        OnRender = RoundCube2Render
+        MaterialSource = LightMaterialSource1
+      end
+      object Sphere1: TSphere
+        Position.X = -3.148921728134155000
+        Position.Y = 0.183998584747314500
+        Width = 1.000000000000000000
+        Height = 1.000000000000000000
+        Depth = 1.000000000000000000
+        HitTest = False
+        OnRender = Sphere1Render
+        MaterialSource = LightMaterialSource1
+      end
+    end
+    object ColorKeyAnimation1: TColorKeyAnimation
+      Duration = 0.200000002980232200
+      Keys = <
+        item
+          Value = claYellow
+        end
+        item
+          Key = 1.000000000000000000
+          Value = claDodgerblue
+        end>
+      PropertyName = 'Color'
+      StartFromCurrent = False
+    end
+    object Text1: TText
+      Position.X = 72.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 500.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Hallo'
+      TextSettings.Font.Size = 30.000000000000000000
+      TextSettings.Font.Style = [fsBold]
+      TextSettings.FontColor = claYellow
+    end
+  end
+  object LightMaterialSource1: TLightMaterialSource
+    Diffuse = claWhite
+    Ambient = xFF202020
+    Emissive = claNull
+    Specular = xFF606060
+    Shininess = 30
+    Left = 48
+    Top = 400
+  end
+  object LightMaterialSource2: TLightMaterialSource
+    Diffuse = claTomato
+    Ambient = xFF202020
+    Emissive = claNull
+    Specular = xFF606060
+    Shininess = 30
+    Left = 104
+    Top = 408
+  end
+  object FDConnection1: TFDConnection
+    Left = 317
+    Top = 95
+  end
+end
